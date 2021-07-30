@@ -88,3 +88,28 @@ body {
         padding: 12px 16px;
     }
 }
+
+@media (min-height: 1800px) {
+    .info_panel_bold {
+        font-size: 40px;
+    }
+
+    .info_panel_title {
+        font-size: 34px;
+    }
+
+    .holiday {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .info_panel {
+        font-size: 28px;
+        margin: 10px 0;
+    }
+
+    .info_panel_list {
+        margin: 30px 0 15px;
+    }
+}

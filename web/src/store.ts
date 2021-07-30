@@ -10,12 +10,6 @@ type State = {
   };
 };
 
-const date = []
-for (let i = 0; i < data.length; i++) {
-  date.push(data[i].url.split('/')[4])
-}
-console.log(date);
-
 type Action =
   | {
     type: "load_day";
