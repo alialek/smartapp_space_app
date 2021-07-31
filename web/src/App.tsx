@@ -59,18 +59,6 @@ export const App: FC = memo(() => {
     dispatch({ type: "load_day", date: getTodayNumber() })
   }, []);
 
-  useEffect(() => {
-    // assistantStateRef.current = {
-    //   item_selector: {
-    //     items: appState.notes.map(({ id, title }, index) => ({
-    //       number: index + 1,
-    //       id,
-    //       title,
-    //     })),
-    //   },
-    // };
-  }, [appState]);
-
   return (
     <main className="container">
       <div className="info_panel info_panel_bold">
