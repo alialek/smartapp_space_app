@@ -42,7 +42,7 @@ export const App: FC = memo(() => {
     }
   });
 
-  const [todayNumber, setTodayNumber] = useState(getTodayNumber());
+  const [todayNumber] = useState(getTodayNumber());
 
   const assistantStateRef = useRef<AssistantAppState>();
   const assistantRef = useRef<ReturnType<typeof createAssistant>>();

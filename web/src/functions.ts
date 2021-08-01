@@ -5,9 +5,9 @@ export const getDateByNumber = (date: number) => {
 };
 
 export const getTodayNumber = () => {
-  const now = new Date();
-  const start = new Date(now.getFullYear(), 0, 0);
-  const diff = <any>now - <any>start;
+  const now: any = new Date();
+  const start: any = new Date(now.getFullYear(), 0, 0);
+  const diff: number = now - start;
   const oneDay = 1000 * 60 * 60 * 24;
   const day = Math.floor(diff / oneDay);
   return day - 1;
