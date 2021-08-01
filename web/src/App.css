@@ -5,11 +5,7 @@ body {
 .container {
     margin: 20px auto 0;
     max-width: 960px;
-    padding: 0 48px;
-}
-
-.nativePanel {
-    background-color: #5352ed;
+    padding: 0 48px 300px 48px;
 }
 
 .note {
@@ -111,5 +107,9 @@ body {
 
     .info_panel_list {
         margin: 30px 0 15px;
+    }
+
+    .container {
+        padding: 0 0 300px 0;
     }
 }
