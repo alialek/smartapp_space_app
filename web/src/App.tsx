@@ -104,6 +104,7 @@ export const App: FC = memo(() => {
       >
         <button
           className="info_panel btn"
+          tabIndex={appState.day.date === 0 ? 1 : 0}
           style={appState.day.date === 0 ? { pointerEvents: 'none', 'opacity': 0.5 } : {}}
           onClick={() => dispatch({ type: "load_previous_day" }) }
         >
@@ -119,7 +120,8 @@ export const App: FC = memo(() => {
         )}
         <button
           className="info_panel btn"
-          style={appState.day.date === 365 ? { pointerEvents: 'none', 'opacity': 0.5 } : {}}
+          tabIndex={appState.day.date === 364 ? 1 : 0}
+          style={appState.day.date === 364 ? { pointerEvents: 'none', 'opacity': 0.5 } : {}}
           onClick={() => dispatch({ type: "load_next_day" }) }
         >
           {todayNumber === appState.day.date ? `Завтра >` : `День вперед >` }
