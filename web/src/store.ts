@@ -14,6 +14,12 @@ type Action =
   | {
     type: "load_day";
     date: number;
+    }
+  | {
+    type: "load_previous_day";
+    }
+  | {
+    type: "load_next_day";
   };
 
 export const reducer = (state: State, action: Action) => {
@@ -23,7 +29,25 @@ export const reducer = (state: State, action: Action) => {
         ...state,
         day: {
           ...data[action.date],
-          date: action.date
+          date: action.date,
+        },
+      };
+
+    case "load_previous_day":
+      return {
+        ...state,
+        day: {
+          ...data[state.day.date - 1],
+          date: state.day.date - 1,
+        },
+      };
+
+    case "load_next_day":
+      return {
+        ...state,
+        day: {
+          ...data[state.day.date + 1],
+          date: state.day.date + 1,
         },
       };
 
