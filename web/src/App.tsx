@@ -102,28 +102,28 @@ export const App: FC = memo(() => {
       <div
         className={todayNumber !== appState.day.date ? "info_panel_group info_panel_group_small" : "info_panel_group" }
       >
-        <div
-          className="info_panel"
+        <button
+          className="info_panel btn"
           style={appState.day.date === 0 ? { pointerEvents: 'none', 'opacity': 0.5 } : {}}
           onClick={() => dispatch({ type: "load_day", date: appState.day.date - 1 }) }
         >
           {todayNumber === appState.day.date ? `< Вчера` : `< День назад` }
-        </div>
+        </button>
         {todayNumber !== appState.day.date && (
-          <div
-            className="info_panel"
+          <button
+            className="info_panel btn"
             onClick={() => dispatch({ type: "load_day", date: todayNumber }) }
           >
             Сегодня
-          </div>
+          </button>
         )}
-        <div
-          className="info_panel"
+        <button
+          className="info_panel btn"
           style={appState.day.date === 365 ? { pointerEvents: 'none', 'opacity': 0.5 } : {}}
           onClick={() => dispatch({ type: "load_day", date: appState.day.date + 1 }) }
         >
           {todayNumber === appState.day.date ? `Завтра >` : `День вперед >` }
-        </div>
+        </button>
       </div>
     </main>
   );
