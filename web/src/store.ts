@@ -46,8 +46,8 @@ export const reducer = (state: State, action: Action) => {
       return {
         ...state,
         day: {
-          ...data[state.day.date + 1 > 365 ? state.day.date + 1 : 364],
-          date: state.day.date + 1 > 365 ? state.day.date + 1 : 364,
+          ...data[state.day.date + 1 < 365 ? state.day.date + 1 : 364],
+          date: state.day.date + 1 < 365 ? state.day.date + 1 : 364,
         },
       };
 
