@@ -19,6 +19,23 @@ theme: /
             a: Уже загружаю!
             a: Готово!
 
+    state: ПоказатьПраздникПоДате
+        q!: * (января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)
+
+        script:
+            var dateNumber = findNumberDate('Праздники ' + $request.query);
+            if (dateNumber === 'notMatch') {
+              $reactions.transition("/ДатаНеРаспознана");
+            } else {
+              loadDay(dateNumber, $context);
+            }
+
+        random:
+            a: Загружаю!
+            a: Сейчаc посмотрим!
+            a: Уже загружаю!
+            a: Готово!
+
     state: Сегодня
         q!: * сегодня *
 
