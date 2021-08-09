@@ -1,9 +1,7 @@
 theme: /
 
     state: ПоказатьПраздник
-        q!: (праздник|праздники)
-            $AnyText::anyText
-            $weight<-0.8>
+        q!: (праздник|праздники) *
 
         script:
             var dateNumber = findNumberDate($request.query);
