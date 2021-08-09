@@ -1,35 +1,35 @@
 body {
-    background-color: #ffffff;
+    background-color: #fff;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif !important;
 }
 
 .container {
-    margin: 20px auto 0;
-    max-width: 960px;
-    padding: 0 48px 200px 48px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px 48px 200px 48px;
 }
 
 .info_panel {
-    background-color: #5352ed;
-    padding: 16px 32px;
-    color: #ffffff;
+    padding: 10px 32px;
+    color: #222f3e;
     margin: 5px 0;
     width: 100%;
     font-size: 14px;
     outline: none;
-    border: none;
     border-radius: 10px;
-}
-
-.btn:focus {
-    background-color: #5352ed;
-    color: #fff;
 }
 
 .btn {
     border-radius: 10px;
-    border: 2px solid #5352ed;
+    background-color: #222f3e;
+    color: #fff;
+    outline: none;
+}
+
+.btn:focus {
     background-color: #fff;
-    color: #5352ed;
+    color: #222f3e;
 }
 
 .info_panel_group {
@@ -37,6 +37,8 @@ body {
     align-items: center;
     justify-content: space-between;
     text-align: center;
+    padding: 10px 32px;
+    margin: 5px 0;
 }
 
 .info_panel_group .info_panel {
@@ -49,28 +51,35 @@ body {
 }
 
 .info_panel_bold {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 28px;
+    font-weight: 900;
     letter-spacing: 1px;
+    color: #2d3436;
 }
 
 .info_panel_title {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
     letter-spacing: 1px;
+    color: #2d3436;
 }
 
 .info_panel_list {
     margin: 10px 0 5px;
+    font-weight: 500;
 }
 
 .holiday {
-    line-height: 22px;
     font-size: 14px;
     letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
 @media (max-width: 600px) {
+    .container {
+        padding: 20px 0 200px 0;
+    }
+
     .info_panel_group {
         flex-direction: column;
     }
@@ -78,11 +87,17 @@ body {
     .info_panel_group .info_panel {
         width: 100%;
     }
-}
 
-@media (max-width: 400px) {
-    .info_panel {
-        padding: 12px 16px;
+    .info_panel_bold {
+        font-size: 20px;
+    }
+
+    .info_panel_title {
+        font-size: 18px;
+    }
+
+    .holiday {
+        font-size: 14px;
     }
 
     .btn {
@@ -90,23 +105,21 @@ body {
     }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1000px) {
     .info_panel_bold {
-        font-size: 40px;
+        font-size: 40px !important;
     }
 
     .info_panel_title {
-        font-size: 34px;
+        font-size: 30px;
     }
 
     .holiday {
-        font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 10px;
+        font-size: 20px;
     }
 
     .info_panel {
-        font-size: 28px;
+        font-size: 20px;
         margin: 10px 0;
     }
 
@@ -115,29 +128,58 @@ body {
     }
 
     .container {
-        max-width: 1200px;
-        padding: 0 0 200px 0;
+        padding: 20px 0 200px 0;
+    }
+}
+
+@media (min-width: 1800px) {
+    .info_panel_bold {
+        font-size: 58px !important;
+    }
+
+    .info_panel_title {
+        font-size: 48px;
+    }
+
+    .holiday {
+        font-size: 30px;
+    }
+
+    .info_panel {
+        font-size: 30px;
+        margin: 10px 0;
+    }
+
+    .info_panel_list {
+        margin: 30px 0 15px;
+    }
+
+    .container {
+        max-width: 1600px;
+        padding: 20px 0 200px 0;
+    }
+
+    .btn {
+        padding: 20px 48px;
     }
 }
 
 @media (min-height: 1800px) {
     .info_panel_bold {
-        font-size: 40px;
+        font-size: 52px !important;
     }
 
     .info_panel_title {
-        font-size: 34px;
+        font-size: 48px;
     }
 
     .holiday {
-        font-size: 24px;
-        line-height: 30px;
-        margin-bottom: 10px;
+        font-size: 36px;
     }
 
     .info_panel {
-        font-size: 28px;
-        margin: 10px 0;
+        font-size: 36px;
+        margin: 10px 0 20px;
     }
 
     .info_panel_list {
@@ -145,6 +187,19 @@ body {
     }
 
     .container {
-        padding: 0 0 200px 0;
+        max-width: 960px;
+        padding: 20px 0 200px 0;
+    }
+
+    .btn {
+        padding: 20px 48px;
+    }
+
+    .info_panel_group {
+        flex-direction: column;
+    }
+
+    .info_panel_group .info_panel {
+        width: 100%;
     }
 }

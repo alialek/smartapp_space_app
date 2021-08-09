@@ -59,8 +59,13 @@ export const App: FC = memo(() => {
     dispatch({ type: "load_day", date: getTodayNumber() })
   }, []);
 
+  useEffect(() => {
+    let element: HTMLElement = document.getElementById('main') as HTMLElement;
+    element.scrollIntoView();
+  }, [appState]);
+
   return (
-    <main className="container">
+    <main className="container" id="main">
       <div className="info_panel info_panel_bold">
         {`Какие праздники ${getDateByNumber(appState.day.date)}`}
       </div>
@@ -68,12 +73,12 @@ export const App: FC = memo(() => {
         <div className="info_panel_title">Праздники</div>
         <div className="info_panel_list">
           {appState.day.holidays.map((holiday, index) => (
-            <div
+            <li
               key={index}
               className="holiday"
             >
               {holiday}
-            </div>
+            </li>
           ))}
           {appState.day.holidays.length === 0 && `-`}
         </div>
@@ -89,12 +94,12 @@ export const App: FC = memo(() => {
         <div className="info_panel_title">Православные праздники</div>
         <div className="info_panel_list">
           {appState.day.holidays_details.map((holiday_details, index) => (
-            <div
+            <li
               key={index}
               className="holiday"
             >
               {holiday_details}
-            </div>
+            </li>
           ))}
           {appState.day.holidays_details.length === 0 && `-`}
         </div>
