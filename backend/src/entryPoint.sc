@@ -4,7 +4,7 @@ require: slotfilling/slotFilling.sc
 # Подключение javascript обработчиков
 require: js/reply.js
 require: js/actions.js
-require: js/findItem.js
+
 
 # Подключение сценарных файлов
 require: scenario/loadDay.sc
