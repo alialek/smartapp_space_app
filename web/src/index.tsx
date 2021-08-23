@@ -2,13 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { App } from "./App";
+import { DeviceThemeProvider } from "@sberdevices/plasma-ui/components/Device"; // Типографика, имеющая размеры, зависимые от типа устройства
+import { GlobalStyle } from "./GlobalStyle"; // Тема оформления (цветовая схема)
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <DeviceThemeProvider>
+    <GlobalStyle />
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </DeviceThemeProvider>,
+  document.getElementById("root"),
 );
 
 // If you want to start measuring performance in your app, pass a function

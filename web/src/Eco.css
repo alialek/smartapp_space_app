@@ -1,0 +1,188 @@
+.icon-card--blue {
+  color: #63b9ba !important;
+  background: rgba(99, 185, 186, 0.12) !important;
+}
+
+.icon-card svg {
+  width: 40px;
+}
+
+.icon-card--small {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 2px;
+}
+
+.icon-card--small svg {
+  width: 40px;
+}
+
+body[scheme="space_gray"] .icon-card--small svg {
+  fill: rgba(255, 255, 255, 0.8);
+}
+
+body[scheme="space_gray"] .icon-card--brown svg {
+  fill: rgba(255, 120, 120, 0.8) !important;
+}
+
+.icon-card--x-small {
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon-card--x-small svg {
+  width: 30px;
+}
+
+.type-column {
+  width: 60px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.icon-card--xx-small svg {
+  margin: 0 auto;
+  display: block;
+  width: 30px;
+  margin-bottom: 5px;
+}
+
+.icon-card--green {
+  color: rgb(75, 179, 75) !important;
+  background: rgba(75, 179, 75, 0.12) !important;
+}
+
+.icon-card--green svg {
+  fill: #4bb34b !important;
+}
+
+.icon-card--blue {
+  color: rgb(99, 185, 186) !important;
+  background: rgba(99, 185, 186, 0.12) !important;
+}
+
+.icon-card--blue svg {
+  fill: #63b9ba !important;
+}
+
+.icon-card--red {
+  color: rgb(251, 72, 132) !important;
+  background: rgba(251, 72, 132, 0.12) !important;
+}
+
+.icon-card--red svg {
+  fill: #fb4884 !important;
+}
+
+.icon-card--orange {
+  background: rgba(255, 160, 0, 0.12) !important;
+  color: rgb(255, 160, 0) !important;
+}
+
+.icon-card--orange svg {
+  fill: #ffa000 !important;
+}
+
+.icon-card--violet svg {
+  fill: #b52dd7 !important;
+}
+
+.icon-card--gold svg {
+  fill: #ab9871 !important;
+}
+
+.icon-card--grey svg {
+  fill: #a7a7a7 !important;
+}
+
+.icon-card--brown svg {
+  fill: #522e2e !important;
+}
+
+.icon-card--pink svg {
+  fill: #e6457a !important;
+}
+
+.icon-card--emerald svg {
+  fill: #4cd964 !important;
+}
+
+.icon-text {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.grid--custom {
+  padding: 10px !important;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.grid--custom .card-wrapper {
+  width: 90px;
+  height: 100px;
+  margin-top: 12px;
+}
+.grid--custom .card-wrapper,
+.waste-flex__item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.icon--centered,
+.icon--centered-column {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.icon--centered {
+  align-items: center;
+}
+
+.icon-text {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.main-row {
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.fraction .card-fraction__body > div {
+  background: unset;
+}
+
+.card-fraction {
+  height: 100px;
+  width: 100%;
+}
+
+.card-fraction__name {
+  text-align: center;
+  margin: 8px 0;
+}
+.d-row {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.checklist {
+  display: flex;
+  margin: 16px 0;
+}
+
+.checklist__icon {
+  margin-right: 8px;
+}
+
+.fraction__subtitle {
+  margin: 16px 0 8px 0;
+}

@@ -1,9 +1,3 @@
-import { dates } from "./dates";
-
-export const getDateByNumber = (date: number) => {
-  return dates[date];
-};
-
 export const getTodayNumber = () => {
   const now: any = new Date();
   const start: any = new Date(now.getFullYear(), 0, 0);
