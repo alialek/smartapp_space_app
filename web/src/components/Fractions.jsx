@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../data/data";
+import data from "../data/space_data";
 import {
   Card,
   CardBody,
@@ -8,6 +8,8 @@ import {
   Row,
   Body2,
   Col,
+  Headline1,
+  Headline3,
 } from "@sberdevices/plasma-ui";
 
 const Fractions = ({ dispatch }) => {
@@ -17,53 +19,57 @@ const Fractions = ({ dispatch }) => {
   };
   return (
     <>
-      <Headline2>Основные фракции</Headline2>
+      <Headline2>Планеты земной группы</Headline2>
       <Row className="main-row">
-        {data.slice(0, 4).map((fraction, i) => (
+        {data.slice(0, 4).map((planet, i) => (
           <React.Fragment key={i}>
             <Col size={2} className="grid--custom">
               <Card
-                onClick={() =>
-                  dispatch({ type: "push_page", data: fraction.id })
-                }
-                onKeyDown={(e) => pushOnKeyDown(e, fraction.id)}
+                onClick={() => dispatch({ type: "push_page", data: planet.id })}
+                onKeyDown={(e) => pushOnKeyDown(e, planet.id)}
                 style={{ width: "100%" }}
-                className="card-fraction"
+                className="card-planet"
                 tabIndex={0}
                 outlined={true}
                 scaleOnFocus={true}
               >
-                <CardBody className="card-fraction__body">
-                  <CardContent cover={true}>{fraction.icon}</CardContent>
+                {planet.icon}
+                <CardBody className="card-planet__body">
+                  <CardContent cover={true}>
+                    <Headline3 className="card-planet__name">
+                      {planet.name}
+                    </Headline3>
+                  </CardContent>
                 </CardBody>
               </Card>
-              <Body2 className="card-fraction__name">{fraction.name}</Body2>
             </Col>
           </React.Fragment>
         ))}
       </Row>
 
-      <Headline2 mt="12x">Дополнительные фракции</Headline2>
+      <Headline2 mt="12x">Планеты гиганты</Headline2>
       <Row className="main-row">
-        {data.slice(4).map((fraction, z) => (
+        {data.slice(4).map((planet, z) => (
           <React.Fragment key={z}>
             <Col size={2} className="grid--custom">
               <Card
-                onClick={() =>
-                  dispatch({ type: "push_page", data: fraction.id })
-                }
-                onKeyDown={(e) => pushOnKeyDown(e, fraction.id)}
+                onClick={() => dispatch({ type: "push_page", data: planet.id })}
+                onKeyDown={(e) => pushOnKeyDown(e, planet.id)}
                 style={{ width: "100%" }}
-                className="card-fraction"
+                className="card-planet"
                 tabIndex={0}
                 outlined={true}
                 scaleOnFocus={true}
               >
-                <CardBody className="card-fraction__body">
-                  <CardContent cover={true}>{fraction.icon}</CardContent>
+                {planet.icon}
+                <CardBody className="card-planet__body">
+                  <CardContent cover={true}>
+                    <Headline3 className="card-planet__name">
+                      {planet.name}
+                    </Headline3>
+                  </CardContent>
                 </CardBody>
               </Card>
-              <Body2 className="card-fraction__name">{fraction.name}</Body2>
             </Col>
           </React.Fragment>
         ))}

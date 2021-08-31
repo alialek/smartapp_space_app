@@ -5,6 +5,7 @@ export const reducer = (state: any = initialState, action: Action) => {
   console.log(JSON.stringify(state));
   switch (action.type) {
     case "push_page":
+      console.log(action);
       return { ...state, history: [...state.history, action.data] };
     case "pop_page":
       return {

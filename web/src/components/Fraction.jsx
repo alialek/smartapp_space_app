@@ -1,63 +1,85 @@
-import { IconDone } from "@sberdevices/plasma-icons";
-import { accent, colors } from "@sberdevices/plasma-tokens";
-import {
-  Body2,
-  Body3,
-  Caption,
-  Card,
-  CardBody,
-  CardContent,
-  Col,
-  Footnote1,
-  ParagraphText1,
-} from "@sberdevices/plasma-ui";
+import { Footnote1, Headline1, ParagraphText1 } from "@sberdevices/plasma-ui";
 import React from "react";
 
-const Fraction = ({ fraction }) => {
+const Fraction = ({ planet }) => {
   return (
-    <div class="fraction">
-      {fraction.sections.map((section) => (
-        <React.Fragment key={section.title}>
-          <Body3 className="fraction__subtitle">{section.title}</Body3>
-          {section.type === "scroll" && (
-            <div className="d-row wrap">
-              {section.content.map((rule) => (
-                <Col size={2} className="grid--custom">
-                  <Card style={{ width: "100%" }} className="card-fraction">
-                    <CardBody className="card-fraction__body white">
-                      <CardContent cover={true}>{rule.icon}</CardContent>
-                    </CardBody>
-                  </Card>
-                  <Footnote1 className="card-fraction__name">
-                    {rule.name}
-                  </Footnote1>
-                </Col>
-              ))}{" "}
-            </div>
+    <div className="planet">
+      {planet.icon}
+      <Headline1 className="planet__subtitle">{planet.name}</Headline1>
+      <ParagraphText1 style={{ whiteSpace: "pre-wrap" }}>
+        {planet.info.about}
+      </ParagraphText1>
+      <dl>
+        <div>
+          {!!planet.info.satellites.length && (
+            <>
+              <dt>Спутники</dt>
+              <span />
+              <dd>{planet.info.satellites}</dd>
+            </>
           )}
-          {(section.type === "checklist" || section.type === "list") &&
-            section.content.map((rule) => (
-              <div className="checklist">
-                {section.type === "checklist" && (
-                  <IconDone
-                    className="checklist__icon"
-                    style={{ marginRight: "8px" }}
-                    color={accent}
-                  />
-                )}
-                {section.type === "list" && (
-                  <div className="white checklist__icon plastic__icon">
-                    {rule.icon}
-                  </div>
-                )}
-                <div className="checklist__text">
-                  <Body3>{rule.name}</Body3>
-                  <ParagraphText1>{rule.description}</ParagraphText1>
-                </div>
-              </div>
-            ))}
-        </React.Fragment>
-      ))}
+        </div>
+        <div>
+          <dt>Расстояние от Солнца</dt>
+          <span />
+          <dd>
+            {planet.info.sun_distance[0]} — {planet.info.sun_distance[1]} а.е.
+          </dd>
+        </div>
+        <div>
+          <dt>Радиус</dt>
+          <span />
+          <dd>{planet.info.radius}</dd>
+        </div>
+        <div>
+          <dt>Температура</dt>
+          <span />
+          <dd>{planet.info.temperature}</dd>
+        </div>
+        <div>
+          <dt>
+            Продолжительность суток{" "}
+            {planet.id !== "earth" && (
+              <Footnote1>относительно земных</Footnote1>
+            )}
+          </dt>
+          <span />
+          <dd>{planet.info.day_duration}</dd>
+        </div>
+        <div>
+          <dt>
+            Продолжительность года{" "}
+            {planet.id !== "earth" && (
+              <Footnote1>относительно земного</Footnote1>
+            )}
+          </dt>
+          <span />
+          <dd>{planet.info.year_duration}</dd>
+        </div>
+        {planet.id !== "earth" ? (
+          <div>
+            <dt>
+              Масса <Footnote1>относительно земной</Footnote1>
+            </dt>
+            <span />
+            <dd>{planet.info.mass}</dd>
+          </div>
+        ) : (
+          <div>
+            <dt>Масса</dt>
+            <span />
+            <dd>
+              5.9742 × 10<sup>24</sup>кг
+            </dd>
+          </div>
+        )}
+
+        <div>
+          <dt>Атмосфера</dt>
+          <span />
+          <dd>{planet.info.atmosphere}</dd>
+        </div>
+      </dl>
     </div>
   );
 };

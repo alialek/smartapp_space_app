@@ -21,7 +21,7 @@ import "./Eco.css";
 import { Container, Header } from "@sberdevices/plasma-ui";
 import Fractions from "./components/Fractions.jsx";
 import { Action, Pages, State } from "./types";
-import data from "./data/data";
+import data from "./data/space_data";
 import Fraction from "./components/Fraction";
 
 const initializeAssistant = (getState: any) => {
@@ -44,7 +44,6 @@ export const App: FC = memo(() => {
   const [appState, dispatch] = useReducer(reducer, initialState);
 
   const handleBack = () => {
-    console.log("backevent");
     dispatch({ type: "pop_page" });
   };
 
@@ -67,21 +66,21 @@ export const App: FC = memo(() => {
     element.scrollIntoView();
   }, [appState]);
   const page = appState.history[appState.history.length - 1];
-  const fraction = data.filter((fr) => fr.id === page)[0];
-  console.log(fraction);
+  const planet = data.filter((pl) => pl.id === page)[0];
+
   return (
-    <Container className="container" id="main">
+    <Container style={{ zIndex: 3 }} className="container" id="main">
       <Header
         back={page !== "main" ? true : undefined}
         onBackClick={handleBack}
-        title={"Правила раздельного сбора"}
-        subtitle={fraction ? fraction.name : ""}
+        title={"Солнечная система"}
+        subtitle={planet ? planet.name : ""}
       ></Header>
 
       {page === "main" ? (
         <Fractions dispatch={dispatch} />
       ) : (
-        <Fraction fraction={fraction} />
+        <Fraction planet={planet} />
       )}
     </Container>
   );
